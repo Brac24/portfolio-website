@@ -5,6 +5,8 @@
 }
 
 /*Custom properties. Update these for your design*/
+/*Inside this block we are setting up variables for reuse
+  We will use them to set different font and backgrounds properties*/
 :root{
     --ff-primary: 'Source Code Pro', sans-serif;
     --ff-secondary: 'Source Sans Pro', monospace;
@@ -34,6 +36,8 @@
 
 /*General Styles*/
 
+/*This block refers to the body in html
+  So everything in the body will take these properties by default*/
 body{
     background: var(--clr-light);
     color: var(--clr-dark);
@@ -43,11 +47,17 @@ body{
     line-height: 1.6;
 }
 
+section{
+    padding: 5em 2em;
+}
+
 img{
     display: block;
     max-width: 100%;
 }
 
+/*Had to do this because the strong tag in html was not working
+  So this line forced text to go bold when using strong tag in html*/
 strong{font-weight: var(--fw-bold);}
 
 /*Typography*/
@@ -63,12 +73,22 @@ h1{font-size: var(--fs-h1)}
 h2{font-size: var(--fs-h2)}
 h3{font-size: var(--fs-h3)}
 
+/* The .section__title blocks correspond to the class in the html*/
+/* Example: .section__title--intro block corresponds to 
+the class name in the h1 of intro section in index.html*/
+
 .section__title{
     margin-bottom: .25em;
 }
 
 .section__title--intro{
     font-weight: var(--fw-reg);
+}
+
+/*Should not do this very often
+  This will take my name and make sure it is always displayed on the next line*/
+.section__title--intro strong{
+    display: block;
 }
 
 .section__subtitle{
@@ -80,4 +100,13 @@ h3{font-size: var(--fs-h3)}
 .section__subtitle--about{
     background: var(--clr-accent);
     font-family: var(--ff-secondary);
+}
+
+/*header*/
+nav{display: none;}
+
+/*Intro Section*/
+
+.intro{
+    position: relative;
 }
